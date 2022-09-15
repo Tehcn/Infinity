@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "infinityarmor",
+  "version": "${version}",
+  "name": "InfinityArmor",
+  "description": "dear god why did i choose to port this from forge 1.12.2",
+  "authors": [
+    "Tehcn"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/infinityarmor/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "dev.tehcn.infinityarmor.InfinityArmor"
+    ],
+    "client": [
+      "dev.tehcn.infinityarmor.InfinityArmorClient"
+    ]
+  },
+  "mixins": [
+    "infinityarmor.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.9",
+    "fabric": "*",
+    "minecraft": "1.19.2"
+  }
+}
