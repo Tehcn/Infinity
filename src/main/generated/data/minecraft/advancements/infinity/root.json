@@ -1,0 +1,37 @@
+{
+  "criteria": {
+    "obtain_raw_infinity": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "infinity:raw_infinity"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
+    "description": {
+      "text": "Obtain raw infinity"
+    },
+    "frame": "goal",
+    "hidden": false,
+    "icon": {
+      "item": "infinity:raw_infinity"
+    },
+    "show_toast": true,
+    "title": {
+      "text": "Infinity... almost"
+    }
+  },
+  "requirements": [
+    [
+      "obtain_raw_infinity"
+    ]
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "infinity:infinity"
+    }
+  },
+  "result": {
+    "item": "infinity:infinity_block",
+    "count": 1
+  }
+}

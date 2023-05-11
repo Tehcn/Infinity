@@ -1,0 +1,31 @@
+{
+  "parent": "minecraft:infinity/obtain_infinity",
+  "criteria": {
+    "visit_darkness": {
+      "conditions": {
+        "to": "minecraft:the_end"
+      },
+      "trigger": "minecraft:changed_dimension"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "text": "Visit the Darkness"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "item": "infinity:infinity_block"
+    },
+    "show_toast": true,
+    "title": {
+      "text": "The Darkness Awaits"
+    }
+  },
+  "requirements": [
+    [
+      "visit_darkness"
+    ]
+  ]
+}

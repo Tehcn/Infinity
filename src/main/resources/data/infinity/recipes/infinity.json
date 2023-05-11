@@ -1,0 +1,11 @@
+{
+  "type": "infinity:condensing",
+  "ingredients": [
+    {
+      "item": "infinity:raw_infinity"
+    }
+  ],
+  "output": {
+    "item": "infinity:infinity"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "infinity:block/condenser"
+    },
+    "facing=south": {
+      "model": "infinity:block/condenser",
+      "y": 180
+    },
+    "facing=east": {
+      "model": "infinity:block/condenser",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "infinity:block/condenser",
+      "y": 270
+    }
+  }
+}

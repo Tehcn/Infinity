@@ -1,0 +1,11 @@
+{
+  "type": "infinity:darkness",
+  "generator": {
+    "type": "minecraft:noise",
+    "settings": "infinity:darkness",
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biome": "infinity:darkness"
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "infinity:plugin": {
+    "initializer": "dev.tehcn.infinity.compat.wthit.InfinityWTHITPlugin",
+    "side": "*"
+  }
+}

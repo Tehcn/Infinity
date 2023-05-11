@@ -1,5 +1,5 @@
 plugins {
-    id 'fabric-loom' version '1.0-SNAPSHOT'
+    id 'fabric-loom' version '1.1-SNAPSHOT'
     id 'maven-publish'
 }
 
@@ -11,8 +11,29 @@ repositories {
     // You should only use this when depending on other mods because
     // Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
     // See https://docs.gradle.org/current/userguide/declaring_repositories.html
-    // for more information about repositories.
+    // for more information about repositories
+    maven { url = "https://maven.kyrptonaught.dev" }
+
+    maven { url = "https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/" }
+
+    maven { url = "https://maven.bai.lol" }
+
+    maven {
+        name = "Ladysnake Libs"
+        url = "https://dl.bintray.com/ladysnake/libs"
+    }
+
+    maven {
+        name = "TerraformersMC"
+        url = "https://maven.terraformersmc.com/"
+    }
+
+    maven {
+        name = "Jared's maven"
+        url = "https://maven.blamejared.com/"
+    }
 }
+
 
 dependencies {
     // To change the versions see the gradle.properties file
@@ -22,6 +43,38 @@ dependencies {
 
     // Fabric API. This is technically optional, but you probably want it anyway.
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+
+    // custom portal api
+    include "net.kyrptonaught:customportalapi:${customportalapi_version}"
+    modImplementation "net.kyrptonaught:customportalapi:${customportalapi_version}"
+
+    // GeckoLib
+    modImplementation "software.bernie.geckolib:geckolib-fabric-1.19.3:${geckolib_version}"
+
+    // WTHIT
+    modCompileOnly "mcp.mobius.waila:wthit-api:fabric-${wthit_version}"
+
+    // WTIHT full jar (includes bad packets)
+    modRuntimeOnly "mcp.mobius.waila:wthit:fabric-${wthit_version}"
+    modRuntimeOnly "lol.bai:badpackets:fabric-0.2.0"
+
+    // player ability lib
+//    modImplementation "io.github.ladysnake:PlayerAbilityLib:${pal_version}"
+//    include "io.github.ladysnake:PlayerAbilityLib:${pal_version}"
+
+    // EMI
+    modCompileOnly "dev.emi:emi:${emi_version}:api"
+    modLocalRuntime "dev.emi:emi:${emi_version}"
+
+    // JEI
+    modCompileOnlyApi("mezz.jei:jei-${minecraft_version}-common-api:${jei_version}")
+    modCompileOnlyApi("mezz.jei:jei-${minecraft_version}-fabric-api:${jei_version}")
+    // at runtime, use the full JEI jar for Fabric
+    modRuntimeOnly("mezz.jei:jei-${minecraft_version}-fabric:${jei_version}")
+
+    modApi("teamreborn:energy:${tech_reborn_energy_api_version}") {
+        exclude(group: "net.fabricmc.fabric-api")
+    }
 }
 
 processResources {
@@ -77,5 +130,30 @@ publishing {
         // Notice: This block does NOT have the same function as the block in the top level.
         // The repositories here will be used for publishing your artifact, not for
         // retrieving dependencies.
+    }
+}
+
+// CUSTOM build stuff
+loom {
+    runs {
+        datagenClient {
+            inherit client
+            name "Data Generation"
+            vmArg "-Dfabric-api.datagen"
+            vmArg "-Dfabric-api.datagen.output-dir=${file("src/main/generated")}"
+            vmArg "-Dfabric-api.datagen.modid=${modid}"
+
+            runDir "build/datagen"
+        }
+    }
+}
+
+sourceSets {
+    main {
+        resources {
+            srcDirs += [
+                'src/main/generated'
+            ]
+        }
     }
 }

@@ -1,0 +1,18 @@
+{
+  "itemGroup.infinity.infinity": "Infinity",
+  "itemGroup.infinity.infinity_machines": "Infinity Machines",
+
+  "item.infinity.raw_infinity": "Raw Infinity",
+  "item.infinity.infinity": "Infinity",
+  "item.infinity.infinity_helmet": "Infinity Helmet",
+  "item.infinity.infinity_chestplate": "Infinity Chestplate",
+  "item.infinity.infinity_leggings": "Infinity Leggings",
+  "item.infinity.infinity_boots": "Infinity Boots",
+
+  "block.infinity.infinity_block": "Block of Infinity",
+  "block.infinity.condenser": "Condenser",
+
+  "ability.infinity.no_fall": "No Fall",
+
+  "message.infinity.darkness_awakens": "The Darkness does not take kindly to being Awakened"
+}
